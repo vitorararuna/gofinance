@@ -1,6 +1,8 @@
 import styled from 'styled-components/native';
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 import { Feather } from '@expo/vector-icons';
+import { DataListProps } from '.'
+import { FlatList } from 'react-native';
 
 
 export const Container = styled.View`
@@ -59,13 +61,34 @@ font-size: ${RFValue(24)}px;
 `;
 
 export const HighlightCards = styled.ScrollView.attrs({ //ATTRS -> Acessa propriedades da scrollview pelo styled-components
-    horizontal: true,
-    showsHorizontalScrollIndicator: false,
-    contentContainerStyle: {paddingHorizontal: 24},
+  horizontal: true,
+  showsHorizontalScrollIndicator: false,
+  contentContainerStyle: { paddingHorizontal: 24 },
 })`
   width: 100%;
   position: absolute;
   margin-top: ${RFValue(95)}px;
+`;
+
+export const Transactions = styled.View`
+/* color: ${({ theme }) => theme.colors.secondary};
+font-size: ${RFValue(24)}px; */
+flex:1;
+padding: 0 14px;
+margin-top: ${RFPercentage(10)}px;
 
 `;
- 
+
+export const Title = styled.Text`
+/* color: ${({ theme }) => theme.colors.secondary}; */
+font-size: ${RFValue(18)}px;
+font-family: ${({ theme }) => theme.fonts.regular};
+
+`;
+
+
+export const TransactionsList = styled(FlatList as new () => FlatList<DataListProps>).attrs({
+  showsVerticalScrollIndicator: false,
+  contentContainerStyle: { paddingBottom: 15 }
+})` 
+`
