@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { Dashboard } from './src/screens/Dashboard';
+import { Register } from './src/screens/Register';
 import { StyleSheet, Platform, StatusBar, SafeAreaView } from "react-native";
 
 import AppLoading from 'expo-app-loading';
@@ -23,7 +23,7 @@ export default function App() {
   return (
     <SafeAreaView style={styles.AndroidSafeArea}>
       <ThemeProvider theme={theme}>
-        <Dashboard />
+        <Register />
       </ThemeProvider>
     </SafeAreaView>
   );
